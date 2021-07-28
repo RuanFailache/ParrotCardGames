@@ -43,3 +43,23 @@ header h1 {
   transform: rotateY(180deg);
   background-color: red;
 }
+
+@media screen and (max-width: 600px) {
+  header h1 {
+    font-size: 3em;
+    width: 320px;
+    margin: 0 auto;
+  }
+  .cards {
+    justify-content: center;
+    width: 160px;
+    margin-bottom: 40px;
+  }
+  .cards .card {
+    width: 150px;
+    height: 200px;
+  }
+  .cards .card img {
+    width: 120px;
+  }
+}
