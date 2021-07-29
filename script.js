@@ -54,6 +54,10 @@ function checkSelected() {
           item.classList.remove("selected");
         });
       }, 1000);
+    } else {
+        itemsSelected.forEach((item) => {
+          item.classList.remove("selected");
+        });
     }
 
     counter = 0;
