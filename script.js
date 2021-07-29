@@ -38,4 +38,24 @@ function selectCard(item) {
     item.children[1].classList.remove("hidden");
     counter++;
   }
+  checkSelected();
+}
+
+function checkSelected() {
+  if (counter === 2) {
+    const itemsSelected = document.querySelectorAll(".active.selected");
+
+    if (itemsSelected[0].innerHTML !== itemsSelected[1].innerHTML) {
+      setTimeout(function () {
+        itemsSelected.forEach((item) => {
+          item.classList.remove("active");
+          item.children[0].classList.remove("hidden");
+          item.children[1].classList.add("hidden");
+          item.classList.remove("selected");
+        });
+      }, 1000);
+    }
+
+    counter = 0;
+  }
 }

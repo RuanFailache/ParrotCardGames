@@ -31,6 +31,10 @@ header h1 {
   cursor: pointer;
   transition: .6s;
 }
+.cards .card:hover {
+  transform: rotateY(30deg);
+  box-shadow: 5px 0 5px 0 #7a7;
+}
 .cards .card img {
   display: block;
   width: 100px;
@@ -44,6 +48,10 @@ header h1 {
 }
 .cards .active {
   transform: rotateY(180deg);
+}
+.cards .card.active:hover {
+  transform: rotateY(180deg);
+  box-shadow: none;
 }
 
 @media screen and (max-width: 600px) {
