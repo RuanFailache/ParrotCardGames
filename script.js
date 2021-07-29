@@ -29,6 +29,7 @@ for (let i = 0; i < qtd; i++) {
 cards.innerHTML = createCards;
 
 let counter = 0;
+let gameCounter = 0;
 
 function selectCard(item) {
   if (counter < 2) {
@@ -37,8 +38,10 @@ function selectCard(item) {
     item.children[0].classList.add("hidden");
     item.children[1].classList.remove("hidden");
     counter++;
+    gameCounter++;
   }
   checkSelected();
+  checkIfWin();
 }
 
 function checkSelected() {
@@ -51,15 +54,23 @@ function checkSelected() {
           item.classList.remove("active");
           item.children[0].classList.remove("hidden");
           item.children[1].classList.add("hidden");
-          item.classList.remove("selected");
         });
       }, 1000);
-    } else {
-        itemsSelected.forEach((item) => {
-          item.classList.remove("selected");
-        });
     }
+    
+    itemsSelected.forEach((item) => {
+      item.classList.remove("selected");
+    });
 
     counter = 0;
   }
+}
+
+function checkIfWin () {
+  const items = document.querySelectorAll(".card");
+  for (let item of items) {
+    if (item.classList.contains("selected") || !item.classList.contains("active"))
+      return
+  }
+  alert(`Você ganhou com ${gameCounter} jogadas!`);
 }
