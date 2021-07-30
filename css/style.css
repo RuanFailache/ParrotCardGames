@@ -1,5 +1,6 @@
 body {
   background-color: #EEF9BF;
+  color: #75B79E;
 }
 header {
   padding: 40px 0;
@@ -10,7 +11,7 @@ header h1 {
   font-weight: 700;
   font-family: 'Roboto', sans-serif;
   text-align: center;
-  color: #75B79E;
+  text-shadow: 3px 5px #7a7;
 }
 .cards {
   display: flex;
@@ -52,6 +53,15 @@ header h1 {
 .cards .card.active:hover {
   transform: rotateY(180deg);
   box-shadow: none;
+}
+.clock {
+  position: fixed;
+  top: 20px;
+  right: 40px;
+
+  font-size: 2em;
+  font-weight: 700;
+  text-shadow: 1px 2px #7a7;  
 }
 
 @media screen and (max-width: 600px) {
