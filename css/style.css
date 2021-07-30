@@ -1,19 +1,18 @@
 body {
   background-color: #EEF9BF;
-  color: #75B79E;
+  font-family: 'Roboto', sans-serif;
 }
 
 header {
-  padding: 40px 0;
+  padding: 60px 0 40px;
 }
 
 header h1 {
   font-size: 4em;
   letter-spacing: -0.4%;
   font-weight: 700;
-  font-family: 'Roboto', sans-serif;
   text-align: center;
-  text-shadow: 3px 5px #7a7;
+  color: #75B79E;
 }
 
 .cards {
@@ -64,14 +63,24 @@ header h1 {
   box-shadow: none;
 }
 
-.clock {
+.play-info {
   position: fixed;
-  top: 20px;
-  right: 40px;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: #99CEA8;
+  border-bottom: 1px solid #75B79E;
+  z-index: 1;
+}
 
-  font-size: 2em;
+.play-info p {
+  font-size: 1em;
   font-weight: 700;
-  text-shadow: 1px 2px #7a7;  
+  color: #EEF9BF;
+  margin: 0 40px;
 }
 
 @media screen and (max-width: 600px) {

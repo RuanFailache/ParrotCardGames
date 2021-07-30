@@ -55,6 +55,7 @@ function selectCard(item) {
     counter++;
     gameCounter++;
   }
+  document.querySelector(".score").innerHTML = gameCounter;
   checkSelected();
   checkIfWin();
 }
