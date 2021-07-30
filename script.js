@@ -76,9 +76,9 @@ function checkSelected() {
           item.children[1].classList.add("hidden");
         });
       }, 1000);
-      itemsSelected.forEach((item) => item.classList.remove("selected"));
-      counter = 0;
     }
+    itemsSelected.forEach((item) => item.classList.remove("selected"));
+    counter = 0;
   }
 }
 
