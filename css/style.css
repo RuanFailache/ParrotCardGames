@@ -2,9 +2,11 @@ body {
   background-color: #EEF9BF;
   color: #75B79E;
 }
+
 header {
   padding: 40px 0;
 }
+
 header h1 {
   font-size: 4em;
   letter-spacing: -0.4%;
@@ -13,6 +15,7 @@ header h1 {
   text-align: center;
   text-shadow: 3px 5px #7a7;
 }
+
 .cards {
   display: flex;
   flex-wrap: wrap;
@@ -22,6 +25,7 @@ header h1 {
   width: 932px;
   margin: 0 auto;
 }
+
 .cards .card {
   width: 120px;
   height: 160px;
@@ -32,10 +36,12 @@ header h1 {
   cursor: pointer;
   transition: .6s;
 }
+
 .cards .card:hover {
   transform: rotateY(30deg);
   box-shadow: 5px 0 5px 0 #7a7;
 }
+
 .cards .card img {
   display: block;
   width: 100px;
@@ -44,16 +50,20 @@ header h1 {
   top: calc((100% - 100px) / 2);
   left: calc((100% - 100px) / 2);
 }
+
 .hidden {
   opacity: 0;
 }
+
 .cards .active {
   transform: rotateY(180deg);
 }
+
 .cards .card.active:hover {
   transform: rotateY(180deg);
   box-shadow: none;
 }
+
 .clock {
   position: fixed;
   top: 20px;
@@ -70,15 +80,18 @@ header h1 {
     width: 320px;
     margin: 0 auto;
   }
+
   .cards {
     justify-content: center;
     width: 160px;
     margin-bottom: 40px;
   }
+
   .cards .card {
     width: 150px;
     height: 200px;
   }
+
   .cards .card img {
     width: 120px;
   }

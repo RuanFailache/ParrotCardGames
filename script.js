@@ -18,7 +18,6 @@ const images = [
 ];
 
 function runGame() {
-  const cards = document.querySelector(".cards");
   qtd = Number(prompt("Digite com quantas cartas você quer jogar"));
   createCards = "";
   time = 0;
@@ -39,13 +38,11 @@ function runGame() {
   for (let i = 0; i < qtd; i++)
     createCards += `<li class="card" onclick="selectCard(this);"> <img class="front" src="assets/images/front.png"><img class="back hidden" src="${imagesToPlay[i]}"> </li>`;
 
-  cards.innerHTML = createCards;
-
-  const clock = document.querySelector(".clock");
+  document.querySelector(".cards").innerHTML = createCards;
 
   stopTime = setInterval(() => {
     time++;
-    clock.innerHTML = time;
+    document.querySelector(".clock").innerHTML = time;
   }, 1000);
 }
 
@@ -67,8 +64,7 @@ function checkSelected() {
     const itemsSelected = document.querySelectorAll(".active.selected");
 
     if (itemsSelected.length === 1) {
-      counter--;
-      return;
+      return counter--;
     }
 
     if (itemsSelected[0].innerHTML !== itemsSelected[1].innerHTML) {
@@ -80,24 +76,17 @@ function checkSelected() {
         });
       }, 1000);
     }
-
-    itemsSelected.forEach((item) => {
-      item.classList.remove("selected");
-    });
-
+    itemsSelected.forEach((item) => item.classList.remove("selected"));
     counter = 0;
   }
 }
 
 function checkIfWin() {
   const items = document.querySelectorAll(".card");
-  for (let item of items) {
-    if (
-      item.classList.contains("selected") ||
-      !item.classList.contains("active")
-    )
+  for (let item of items) 
+    if (item.classList.contains("selected") || !item.classList.contains("active")) 
       return;
-  }
+
   clearInterval(stopTime);
   alert(`Você ganhou com ${gameCounter} jogadas e em ${time} segundos!`);
 
